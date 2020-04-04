@@ -3,7 +3,7 @@
   "version": "0.2.6",
   "main": "main.js",
   "license": "MIT",
-  "description": "An electron wrapper for notify.moe and twist.moe. This is just a wrapper made with Electron for ease of use. All rights reserved to the respective owners.",
+  "description": "An electron wrapper for notify.moe and twist.moe. This is a wrapper made with Electron for ease of use. All rights reserved to the respective owners.",
   "author": "louisdalibard <louis.dalibard@gmail.com>",
   "homepage": "https://notify.moe/",
   "scripts": {
