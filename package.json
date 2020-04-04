@@ -1,0 +1,40 @@
+{
+  "name": "Anime-Notifier",
+  "version": "0.2.6",
+  "main": "main.js",
+  "license": "MIT",
+  "description": "An electron wrapper for notify.moe and twist.moe. This is just a wrapper made with Electron for ease of use. All rights reserved to the respective owners.",
+  "author": "louisdalibard <louis.dalibard@gmail.com>",
+  "homepage": "https://notify.moe/",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist-all": "electron-builder -mw",
+    "installdeps": "npm i -D electron@latest --save-dev && npm install electron-builder --save-dev"
+  },
+  "devDependencies": {
+    "electron": "^8.2.0",
+    "electron-builder": "^22.4.1"
+  },
+  "build": {
+    "appId": "com.animenotifier.app",
+    "linux": {
+      "icon": "build/512.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/512.png"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": "zip",
+      "icon": "build/512.png",
+      "darkModeSupport": false,
+      "type": "distribution"
+    }
+  }
+}
