@@ -30,12 +30,11 @@ function createWindow() {
     // win.webContents.openDevTools()
 }
 
-function togglesites(){
-    if (currentsite == "notify"){
+function togglesites() {
+    if (currentsite == "notify") {
         currentsite = "twist";
         return "https://twist.moe/"
-    }
-    else{
+    } else {
         currentsite = "notify"
         return "https://notify.moe/"
     }
@@ -74,7 +73,20 @@ app.on('ready', function() {
                 win.webContents.goBack()
             }
         }]
-    },{label: "About",submenu: [{label:'Platform: '+process.platform},{label:"Architecture: "+process.arch},{label:"Electron v"+process.versions.electron},{label:"Chrome v"+process.versions.chrome},{label:"Node.js v"+process.versions.node}]}]
+    }, {
+        label: "About",
+        submenu: [{
+            label: 'Platform: ' + process.platform
+        }, {
+            label: "Architecture: " + process.arch
+        }, {
+            label: "Electron v" + process.versions.electron
+        }, {
+            label: "Chrome v" + process.versions.chrome
+        }, {
+            label: "Node.js v" + process.versions.node
+        }]
+    }]
     //Apply menu
     const menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
