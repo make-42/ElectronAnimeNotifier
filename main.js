@@ -51,6 +51,14 @@ app.on('ready', function() {
     createWindow();
     //Define Menus
     const template = [{
+        label: 'Anime Notifier',
+        submenu: [{
+            label: 'Exit',
+            click: function() {
+                app.quit();
+            }
+        }]
+    }, {
         label: 'Toggle Sites',
         submenu: [{
             label: 'Load Anime Twist',
