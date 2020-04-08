@@ -25,7 +25,6 @@ function createWindow() {
     // and load the index.html of the app.
     win.loadURL('https://notify.moe/');
     currentsite = "notify";
-
     // Open the DevTools.
     // win.webContents.openDevTools()
 }
@@ -106,6 +105,9 @@ app.on('ready', function() {
     })
     globalShortcut.register('CommandOrControl+Q', () => {
         app.quit()
+    })
+    globalShortcut.register('CommandOrControl+R', () => {
+        document.location.reload(true);
     })
 });
 
