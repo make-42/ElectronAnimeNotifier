@@ -79,6 +79,11 @@ app.on('ready', function() {
             click: function() {
                 win.webContents.goBack()
             }
+        },{
+            label: "Reload",
+            click: function() {
+                win.reload()
+            }
         }]
     }, {
         label: "About",
@@ -107,7 +112,7 @@ app.on('ready', function() {
         app.quit()
     })
     globalShortcut.register('CommandOrControl+R', () => {
-        document.location.reload(true);
+        win.reload();
     })
 });
 
