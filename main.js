@@ -104,6 +104,9 @@ app.on('ready', function() {
     globalShortcut.register('CommandOrControl+X', () => {
         win.loadURL(togglesites());
     })
+    globalShortcut.register('CommandOrControl+Q', () => {
+        app.quit()
+    })
 });
 
 // Quit when all windows are closed.
