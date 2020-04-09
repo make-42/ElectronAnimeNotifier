@@ -1,6 +1,6 @@
 {
   "name": "Anime-Notifier",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "main.js",
   "license": "MIT",
   "description": "An electron wrapper for notify.moe and twist.moe. This is a wrapper made with Electron for ease of use. All rights reserved to the respective owners.",
