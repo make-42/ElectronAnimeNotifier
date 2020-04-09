@@ -9,6 +9,9 @@ const globalShortcut = electron.globalShortcut;
 let win;
 let currentsite;
 
+const windowsintrourl = 'https://rawcdn.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/bb501fb86b86890718373afe106e36f72ff595ad/build/windows.html'
+const linuxintrourl = 'https://rawcdn.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/bb501fb86b86890718373afe106e36f72ff595ad/build/linux.html'
+const darwinintrourl = 'https://rawcdn.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/bb501fb86b86890718373afe106e36f72ff595ad/build/apple.html'
 
 
 function createWindow() {
@@ -23,8 +26,18 @@ function createWindow() {
         icon: __dirname + "build/icon.ico"
     })
     // and load the index.html of the app.
-    win.loadURL('https://notify.moe/');
-    currentsite = "notify";
+
+    if (process.platform == 'linux'){
+      win.loadURL(linuxintrourl);
+    }
+    else if (process.platform == 'darwin'){
+      win.loadURL(darwinintrourl);
+    }
+    else{
+    win.loadURL(windowsintrourl);
+    }
+    setTimeout(function(){ win.loadURL('https://notify.moe/');
+    currentsite = "notify";}, 3000);
     // Open the DevTools.
     // win.webContents.openDevTools()
 }
