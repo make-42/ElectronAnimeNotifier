@@ -27,17 +27,17 @@ function createWindow() {
     })
     // and load the index.html of the app.
 
-    if (process.platform == 'linux'){
-      win.loadURL(linuxintrourl);
+    if (process.platform == 'linux') {
+        win.loadURL(linuxintrourl);
+    } else if (process.platform == 'darwin') {
+        win.loadURL(darwinintrourl);
+    } else {
+        win.loadURL(windowsintrourl);
     }
-    else if (process.platform == 'darwin'){
-      win.loadURL(darwinintrourl);
-    }
-    else{
-    win.loadURL(windowsintrourl);
-    }
-    setTimeout(function(){ win.loadURL('https://notify.moe/');
-    currentsite = "notify";}, 4000);
+    setTimeout(function() {
+        win.loadURL('https://notify.moe/');
+        currentsite = "notify";
+    }, 4000);
     // Open the DevTools.
     // win.webContents.openDevTools()
 }
@@ -92,7 +92,7 @@ app.on('ready', function() {
             click: function() {
                 win.webContents.goBack()
             }
-        },{
+        }, {
             label: "Reload",
             click: function() {
                 win.reload()
