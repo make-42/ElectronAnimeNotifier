@@ -105,6 +105,8 @@ app.on('ready', function() {
         }, {
             label: "Architecture: " + process.arch
         }, {
+            label: "App v" + app.getVersion()
+        }, {
             label: "Electron v" + process.versions.electron
         }, {
             label: "Chrome v" + process.versions.chrome
