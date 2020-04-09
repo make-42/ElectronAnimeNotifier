@@ -37,7 +37,7 @@ function createWindow() {
     win.loadURL(windowsintrourl);
     }
     setTimeout(function(){ win.loadURL('https://notify.moe/');
-    currentsite = "notify";}, 3000);
+    currentsite = "notify";}, 4000);
     // Open the DevTools.
     // win.webContents.openDevTools()
 }
