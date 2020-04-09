@@ -9,9 +9,9 @@ const globalShortcut = electron.globalShortcut;
 let win;
 let currentsite;
 
-const windowsintrourl = 'https://rawcdn.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/bb501fb86b86890718373afe106e36f72ff595ad/build/windows.html'
-const linuxintrourl = 'https://rawcdn.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/bb501fb86b86890718373afe106e36f72ff595ad/build/linux.html'
-const darwinintrourl = 'https://rawcdn.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/bb501fb86b86890718373afe106e36f72ff595ad/build/apple.html'
+const windowsintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/master/build/windows.html'
+const linuxintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/master/build/linux.html'
+const darwinintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/master/build/apple.html'
 
 
 function createWindow() {
