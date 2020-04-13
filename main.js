@@ -42,6 +42,14 @@ function createWindow() {
     // win.webContents.openDevTools()
 }
 
+function darkmodeenable() {
+    win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--bg-color\",\"rgb(46, 46, 46)\")");
+    win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color\",\"rgb(230, 230, 230)\")");
+    win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--anime-list-item-name-color\",\"rgb(230, 230, 230)\")");
+    win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color-l\",\"90%\")");
+    win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tip-bg-color\",\"#111111\")");
+}
+
 function togglesites() {
     if (currentsite == "notify") {
         currentsite = "twist";
@@ -68,6 +76,11 @@ app.on('ready', function() {
             label: 'Exit',
             click: function() {
                 app.quit();
+            }
+        }, {
+            label: "Enable Dark Mode",
+            click: function() {
+                darkmodeenable();
             }
         }]
     }, {
@@ -128,6 +141,9 @@ app.on('ready', function() {
     })
     globalShortcut.register('CommandOrControl+R', () => {
         win.reload();
+    })
+    globalShortcut.register('CommandOrControl+D', () => {
+        darkmodeenable();
     })
 });
 
