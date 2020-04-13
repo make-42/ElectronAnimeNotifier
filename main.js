@@ -50,6 +50,7 @@ function darkmodeenable() {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--anime-list-item-name-color\",\"rgb(215, 38, 15)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color-l\",\"23.5%\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tip-bg-color\",\"#ffffff\")");
+        win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--ui-background\",\"hsl(0,0%,100%)\")");
         darkmodestate = false;
     } else {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--bg-color\",\"rgb(46, 46, 46)\")");
@@ -57,6 +58,7 @@ function darkmodeenable() {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--anime-list-item-name-color\",\"rgb(230, 230, 230)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color-l\",\"90%\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tip-bg-color\",\"#111111\")");
+        win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--ui-background\",\"hsl(0,0%,25%)\")");
         darkmodestate = true;
     }
 }
