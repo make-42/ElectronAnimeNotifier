@@ -8,6 +8,7 @@ const globalShortcut = electron.globalShortcut;
 //Init variables
 let win;
 let currentsite;
+let darkmodestate;
 
 const windowsintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/master/build/windows.html'
 const linuxintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/master/build/linux.html'
@@ -43,11 +44,22 @@ function createWindow() {
 }
 
 function darkmodeenable() {
+    if (darkmodestate) {
+      win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--bg-color\",\"hsl(0%,0%,96%)\")");
+      win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color\",\"hsl(0%,0%,24%)\")");
+      win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--anime-list-item-name-color\",\"rgb(215, 38, 15)\")");
+      win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color-l\",\"23.5%\")");
+      win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tip-bg-color\",\"#ffffff\")");
+      darkmodestate=false;
+    }
+    else{
     win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--bg-color\",\"rgb(46, 46, 46)\")");
     win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color\",\"rgb(230, 230, 230)\")");
     win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--anime-list-item-name-color\",\"rgb(230, 230, 230)\")");
     win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--text-color-l\",\"90%\")");
     win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tip-bg-color\",\"#111111\")");
+    darkmodestate=true;
+    }
 }
 
 function togglesites() {
@@ -78,7 +90,7 @@ app.on('ready', function() {
                 app.quit();
             }
         }, {
-            label: "Enable Dark Mode",
+            label: "Toggle Dark Mode",
             click: function() {
                 darkmodeenable();
             }
@@ -145,7 +157,7 @@ app.on('ready', function() {
     globalShortcut.register('CommandOrControl+D', () => {
         darkmodeenable();
     })
-});
+  });
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
