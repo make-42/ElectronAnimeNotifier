@@ -55,6 +55,7 @@ function darkmodeenable() {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--link-hover-color\",\"rgb(240,73,50)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--button-color\",\"rgb(240,73,50)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--sidebar-background\",\"rgba(0,0,0,0)\")");
+        win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tab-active-background\",\"rgba(255,255,255,1)\")");
         darkmodestate = false;
     } else {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--bg-color\",\"rgb(46, 46, 46)\")");
@@ -67,6 +68,7 @@ function darkmodeenable() {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--link-hover-color\",\"hsl(45,100%,66%)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--button-color\",\"hsl(45,100%,66%)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--sidebar-background\",\"rgba(0,0,0,0.45)\")");
+        win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tab-active-background\",\"rgba(0,0,0,0.45)\")");
         darkmodestate = true;
     }
 }
