@@ -123,8 +123,8 @@ app.on('ready', function() {
                 win.loadURL('https://notify.moe/');
                 currentsite = "notify";
                 setTimeout(function() {
-                darkmodeenable();
-              },1000);
+                    darkmodeenable();
+                }, 1000);
             }
         }]
     }, {
@@ -137,11 +137,11 @@ app.on('ready', function() {
         }, {
             label: "Reload",
             click: function() {
-              win.reload();
-              darkmodestate = false;
-              setTimeout(function() {
-              darkmodeenable();
-            },1000);
+                win.reload();
+                darkmodestate = false;
+                setTimeout(function() {
+                    darkmodeenable();
+                }, 1000);
             }
         }]
     }, {
@@ -170,8 +170,8 @@ app.on('ready', function() {
         darkmodestate = false;
         win.loadURL(togglesites());
         setTimeout(function() {
-        darkmodeenable();
-      },1000);
+            darkmodeenable();
+        }, 1000);
     })
     globalShortcut.register('CommandOrControl+Q', () => {
         app.quit()
@@ -180,8 +180,8 @@ app.on('ready', function() {
         win.reload();
         darkmodestate = false;
         setTimeout(function() {
-        darkmodeenable();
-      },1000);
+            darkmodeenable();
+        }, 1000);
     })
     globalShortcut.register('CommandOrControl+D', () => {
         darkmodeenable();
