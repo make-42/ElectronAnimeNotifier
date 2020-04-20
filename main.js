@@ -38,6 +38,7 @@ function createWindow() {
     setTimeout(function() {
         win.loadURL('https://notify.moe/');
         currentsite = "notify";
+        darkmodeenable();
     }, 4000);
     // Open the DevTools.
     // win.webContents.openDevTools()
@@ -55,7 +56,7 @@ function darkmodeenable() {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--link-hover-color\",\"rgb(240,73,50)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--button-color\",\"rgb(240,73,50)\")");
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--sidebar-background\",\"rgba(0,0,0,0)\")");
-        win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tab-active-background\",\"rgba(255,255,255,1)\")");
+        win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--tab-active-background\",\"rgba(100,100,100,1)\")");
         darkmodestate = false;
     } else {
         win.webContents.executeJavaScript("document.getElementsByTagName(\"body\")[0].style.setProperty(\"--bg-color\",\"rgb(46, 46, 46)\")");
@@ -78,7 +79,7 @@ function togglesites() {
         currentsite = "twist";
         return "https://twist.moe/"
     } else {
-        currentsite = "notify"
+        currentsite = "notify";
         return "https://notify.moe/"
     }
 }
@@ -111,14 +112,19 @@ app.on('ready', function() {
         submenu: [{
             label: 'Load Anime Twist',
             click: function() {
+                darkmodestate = false;
                 win.loadURL('https://twist.moe/');
                 currentsite = "twist";
             }
         }, {
             label: 'Load Anime Notifier',
             click: function() {
+                darkmodestate = false;
                 win.loadURL('https://notify.moe/');
                 currentsite = "notify";
+                setTimeout(function() {
+                darkmodeenable();
+              },1000);
             }
         }]
     }, {
@@ -131,7 +137,11 @@ app.on('ready', function() {
         }, {
             label: "Reload",
             click: function() {
-                win.reload()
+              win.reload();
+              darkmodestate = false;
+              setTimeout(function() {
+              darkmodeenable();
+            },1000);
             }
         }]
     }, {
@@ -157,13 +167,21 @@ app.on('ready', function() {
         win.webContents.openDevTools();
     })
     globalShortcut.register('CommandOrControl+X', () => {
+        darkmodestate = false;
         win.loadURL(togglesites());
+        setTimeout(function() {
+        darkmodeenable();
+      },1000);
     })
     globalShortcut.register('CommandOrControl+Q', () => {
         app.quit()
     })
     globalShortcut.register('CommandOrControl+R', () => {
         win.reload();
+        darkmodestate = false;
+        setTimeout(function() {
+        darkmodeenable();
+      },1000);
     })
     globalShortcut.register('CommandOrControl+D', () => {
         darkmodeenable();
