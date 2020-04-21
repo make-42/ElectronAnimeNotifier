@@ -15,6 +15,7 @@ const linuxintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnimeN
 const darwinintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnimeNotifier/master/build/apple.html'
 
 
+
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
@@ -98,15 +99,27 @@ app.on('ready', function() {
         label: 'Anime Notifier',
         submenu: [{
             label: 'Exit',
+            accelerator: 'CommandOrControl+Q',
             click: function() {
                 app.quit();
             }
-        }, {
+        },{ type: "separator" }, {
             label: "Toggle Dark Mode",
+            accelerator : 'CommandOrControl+D',
             click: function() {
                 darkmodeenable();
             }
         }]
+    },{
+      label: "Edit",
+        submenu: [
+            { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+            { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+            { type: "separator" },
+            { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+            { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+            { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
+        ]
     }, {
         label: 'Toggle Sites',
         submenu: [{
@@ -134,8 +147,9 @@ app.on('ready', function() {
             click: function() {
                 win.webContents.goBack()
             }
-        }, {
+        }, { type: "separator" },{
             label: "Reload",
+            accelerator : 'CommandOrControl+R',
             click: function() {
                 win.reload();
                 darkmodestate = false;
@@ -150,9 +164,9 @@ app.on('ready', function() {
             label: 'Platform: ' + process.platform
         }, {
             label: "Architecture: " + process.arch
-        }, {
+        }, { type: "separator" },{
             label: "App v" + app.getVersion()
-        }, {
+        }, { type: "separator" },{
             label: "Electron v" + process.versions.electron
         }, {
             label: "Chrome v" + process.versions.chrome
@@ -172,19 +186,6 @@ app.on('ready', function() {
         setTimeout(function() {
             darkmodeenable();
         }, 1000);
-    })
-    globalShortcut.register('CommandOrControl+Q', () => {
-        app.quit()
-    })
-    globalShortcut.register('CommandOrControl+R', () => {
-        win.reload();
-        darkmodestate = false;
-        setTimeout(function() {
-            darkmodeenable();
-        }, 1000);
-    })
-    globalShortcut.register('CommandOrControl+D', () => {
-        darkmodeenable();
     })
 });
 
