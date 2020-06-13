@@ -6,7 +6,7 @@ const BrowserWindow = electron.BrowserWindow;
 const globalShortcut = electron.globalShortcut;
 
 //Init variables
-let win;
+let win = null;
 let currentsite;
 let darkmodestate;
 
@@ -17,15 +17,14 @@ const darwinintrourl = 'https://raw.githack.com/TechAdvancedCyborg/ElectronAnime
 
 
 function createWindow() {
-    // Create the browser window.
-    win = new BrowserWindow({
+	// Create the browser window.
+   	win = new BrowserWindow({
         // Set parameters
         width: 800,
         height: 600,
         webPreferences: {
             nodeIntegration: true
-        },
-        icon: __dirname + "build/icon.ico"
+        }
     })
     // and load the index.html of the app.
 

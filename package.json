@@ -14,8 +14,8 @@
     "installdeps": "npm i -D electron@latest --save-dev && npm install electron-builder --save-dev"
   },
   "devDependencies": {
-    "electron": "^8.2.3",
-    "electron-builder": "^22.5.1"
+    "electron": "^9.0.3",
+    "electron-builder": "^22.7.0"
   },
   "build": {
     "appId": "com.animenotifier.app",
