@@ -1,34 +1,78 @@
 <style>
-@keyframes appear {
-  from{opacity:0%;}
-  to{opacity:100%;}
-}
-@keyframes appeartext {
-  0%{opacity:0%;letter-spacing: normal;left:37vw;}
-  50%{opacity:0%;letter-spacing: normal;left:37vw;}
-  100%{opacity:100%;letter-spacing: 1vw;left:31vw;}
-}
-.logo{
-  width: 20%;
-  height: auto;
-  text-align: center;
-  position: absolute;
-  left: 40%;
-  top: 30%;
-  opacity: 100%;
-  animation-duration: 3s;
-  animation-name: appear;
-}
-h1{
-  font-family: monospace;
-  letter-spacing: 1vw;
-  bottom: 0.3vh;
-  position: absolute;
-  font-size: 3vw;
-  left: 31vw;
-  animation-duration: 3s;
-  animation-name: appeartext;
-}
+    @keyframes appear {
+        from {
+            opacity: 0%;
+            filter: invert(0%);
+        }
+
+        to {
+            opacity: 100%;
+            filter: invert(100%);
+        }
+    }
+
+    @keyframes appeartext {
+        0% {
+            opacity: 0%;
+            letter-spacing: normal;
+            left: 37vw;
+            color: #000000;
+        }
+
+        50% {
+            opacity: 0%;
+            letter-spacing: normal;
+            left: 37vw;
+        }
+
+        100% {
+            opacity: 100%;
+            letter-spacing: 1vw;
+            left: 31vw;
+            color: #FFFFFF;
+        }
+    }
+
+    @keyframes backgrounddarken {
+        from {
+            background: #FFFFFF;
+        }
+
+        to {
+            background: #2e2e2e;
+        }
+    }
+
+    body {
+        background: #2e2e2e;
+        animation-duration: 3s;
+        animation-name: backgrounddarken;
+    }
+
+    .logo {
+        width: 20%;
+        height: auto;
+        text-align: center;
+        position: absolute;
+        left: 40%;
+        top: 30%;
+        opacity: 100%;
+        filter: invert(100%);
+        animation-duration: 3s;
+        animation-name: appear;
+    }
+
+    h1 {
+        font-family: monospace;
+        letter-spacing: 1vw;
+        bottom: 0.3vh;
+        position: absolute;
+        font-size: 3vw;
+        left: 31vw;
+        animation-duration: 3s;
+        animation-name: appeartext;
+        color: #FFFFFF;
+    }
 </style>
 <img class="logo" src="https://imgur.com/9VSkbxv.png">
 <h1>Anime Notifier</h1>
