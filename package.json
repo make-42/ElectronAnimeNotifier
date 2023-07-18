@@ -14,7 +14,7 @@
     "installdeps": "npm i -D electron@latest --save-dev && npm install electron-builder --save-dev"
   },
   "devDependencies": {
-    "electron": "^9.0.4",
+    "electron": "^18.3.7",
     "electron-builder": "^22.7.0"
   },
   "build": {
